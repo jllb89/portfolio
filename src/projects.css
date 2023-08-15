@@ -40,7 +40,7 @@
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Shift back by half of its own width and height to center */
     z-index: 2; /* Make sure the title is above the overlay */
-    font-family: 'regular-mori';
+    font-family: 'regular';
     font-size: .7rem;
   }
  

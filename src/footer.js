@@ -14,7 +14,7 @@ function Footer({ homeRef, aboutRef, worksRef, contactRef }) {
   return (
     <footer className="footer-container" data-scroll data-scroll-speed="1">
       <div className="footer-text" data-scroll data-scroll-speed="0.5">
-        WOULD LOVE TO HEAR FROM YOU ☺
+        WOULD LOVE TO HEAR FROM YOU.
         <div className='contact-text'>
         Feel free to reach out if you want to collaborate or simply have a chat.
         </div>
@@ -35,8 +35,12 @@ function Footer({ homeRef, aboutRef, worksRef, contactRef }) {
             <a href="https://medium.com/@your-medium-username" target="_blank" rel="noopener noreferrer">medium</a>
         </div>
       </div>
-      <div className="back-to-top-button">top ↑</div>
-    </footer>
+      <div 
+        className="back-to-top-button" 
+        onClick={() => handleScrollTo(homeRef)}
+      >
+        top ↑
+      </div>    </footer>
   );
 }
 

@@ -169,6 +169,7 @@
       align-self: flex-start; /* Align the logo to the start */
       order: 0; /* Ensuring the logo stays in the first position */
       margin-top: 2.3rem; /* Adjust this value to align the logo with the button */
+      font-size: .6rem;
     }
   
     .navbar .columns {

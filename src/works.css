@@ -32,6 +32,7 @@
     background-repeat: no-repeat;
     z-index: -1;
     transition: background-image 2s ease-in-out;
+    pointer-events: auto;
   }
   
   .project-titles {
@@ -64,6 +65,8 @@
     opacity: 0.3;
     transition: opacity 0.3s ease;
     text-decoration: none; /* Removes underline */
+    pointer-events: auto;
+
   }
   
   .project.active a {
@@ -128,17 +131,21 @@ font-family: 'regular';  }
 
   /* Additional adjustments for the works section */
   .works .projects-container .background-image {
-    z-index: 0; /* You can reset the z-index to 0 if required */
+    z-index: 2; /* You can reset the z-index to 0 if required */
   }
 
-  .projects-container{
-    padding-left: 0;
-  }
+
   
   .project-titles {
-    z-index: 2;
+    z-index: 3;
     padding-bottom: 18rem;
     padding-left: 0;
+    pointer-events: none;
+
+  }
+
+  .project-titles, .open-mobile {
+    pointer-events: none;
   }
 
   .custom-cursor {

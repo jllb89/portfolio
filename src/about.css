@@ -20,62 +20,50 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.5s; /* transition over 0.5 seconds */
 }
 
 .about-video video {
   max-width: 100%;
   max-height: 100%;
   opacity: 1;
+  transition: opacity 0.5s; /* Added transition to the video */
 }
 
 .about-content {
   position: absolute;
   z-index: 2;
   top: 0;
-  right: 0; /* Position at the right side of the viewport */
-  width: 50%; /* Take up 50% of the width */
+  right: 0;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-right: 4rem;
-  text-align: right; /* Set text alignment to left */
+  text-align: right;
   box-sizing: border-box;
-  visibility: hidden; /* Set initial visibility to hidden */
   opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s; /* Add visibility to transition */
+  transition: opacity 0.5s;
 }
 
 .about-text {
   font-size: 1.5rem;
   font-family: 'regular-mori';
   color: white;
-  opacity: 0;
-  transition: opacity 3s, visibility 3s; /* Add visibility to transition */
-  visibility: hidden; /* Set initial visibility to hidden */
 }
 
-
-.fade-in {
-  opacity: 1 !important;
-  visibility: visible !important; /* Set visibility to visible */
+.visible {
+  opacity: 1;
 }
 
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-  visibility: hidden;
-}
 
 @media screen and (max-width: 768px) {
-
   .about-section {
     height: 85%;
   }
 
   .about-text {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .about-content {
@@ -84,6 +72,5 @@
 
   .about-video {
     width: 100%;
-
   }
 }

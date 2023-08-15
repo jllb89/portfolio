@@ -1,7 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'; // Import the Link component
-import { projects } from './projectsData'; // Import the projects array from projectsData.js
+import { Link } from 'react-router-dom'; 
+import { projects } from './projectsData'; 
 import './works.css';
+
+function BackgroundImage({ src, alt, ...props }) {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => {
+      setLoaded(true);
+    };
+  }, [src]);
+
+  return (
+    <>
+      <img src={src} alt={alt} style={{ display: 'none' }} />
+      {loaded && (
+        <div
+          {...props}
+          style={{ ...props.style, backgroundImage: `url(${src})` }}
+        />
+      )}
+    </>
+  );
+}
 
 function Works() {
   const [activeProject, setActiveProject] = useState(0);
@@ -12,13 +36,13 @@ function Works() {
     clearInterval(intervalId.current);
     intervalId.current = setInterval(() => {
       setActiveProject((prevActiveProject) => (prevActiveProject + 1) % projects.length);
-    }, 4000);
+    }, 5000);
   };
 
   useEffect(() => {
     intervalId.current = setInterval(() => {
       setActiveProject((prevActiveProject) => (prevActiveProject + 1) % projects.length);
-    }, 4000);
+    }, 5000);
 
     return () => {
       clearInterval(intervalId.current);
@@ -65,11 +89,11 @@ function Works() {
   return (
     <div className="works-div" data-scroll data-scroll-speed="1">
       <div className="projects-container">
-        {/* Wrap the background image with a Link */}
         <Link to={`/project/${projects[activeProject].id}`}>
-          <div
+          <BackgroundImage
             className="background-image"
-            style={{ backgroundImage: `url(${projects[activeProject].projectImage})` }} // Use projectImage from the projects array
+            src={projects[activeProject].projectImage}
+            alt={projects[activeProject].title}
           />
         </Link>
         <div className="project-titles" data-scroll data-scroll-speed="3">

@@ -22,7 +22,7 @@ function Home({ scrollRef, homeRef, aboutRef, worksRef, contactRef }) {
     scrollRef.current = new LocomotiveScroll({
       el: document.querySelector('.scroll-container'),
       smooth: true,
-      smoothMobile: true,
+      smoothMobile: false,
       inertia: 0.5,
     });
 
