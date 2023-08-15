@@ -1,0 +1,131 @@
+.footer-container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-text {
+  padding-top: 6rem;
+  padding-left: 6rem;
+  font-size: 4rem;
+  font-family: 'regular-mori';
+  line-height: 4rem;
+  margin-bottom: 2rem;
+  flex: 1;
+  text-decoration: none;
+}
+
+.contact-text {
+  font-family: 'regular';
+  font-size: .8rem;
+  padding-top: 1rem;
+}
+
+
+.footer-columns {
+  padding-top: 5.4rem;
+  padding-left: 12rem;
+  font-family: 'regular';
+  font-size: .8rem;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  cursor: pointer;
+}
+
+
+.email-text {
+padding-top: 14rem;
+font-family: 'regular';
+font-size: 2rem;}
+
+.email-link {
+  text-decoration: none;
+  color: inherit; /* if you want to inherit color from parent */
+}
+
+.arrow {
+  transition: transform .3s ease-in-out;
+  display: inline-block; /* makes it able to be transformed */
+}
+
+.email-link:hover .arrow {
+  transform: translateX(.2rem);
+}
+
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column a {
+  display: block;
+  color: rgba(255, 255, 255, 0.604);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: transform .5s, padding .5s;
+}
+
+.footer-column a:hover {
+  transform: translateX(.1rem);
+  padding-left: .1rem;
+  color: white;
+}
+
+.back-to-top-button {
+  position: fixed;
+  bottom: 1rem; /* distance from the bottom */
+  right: 2rem; /* distance from the right */
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform .3s ease-in-out;
+  font-family: 'regular';
+  font-size: .6rem;
+}
+
+.back-to-top-button:hover {
+  transform: translateY(-.1rem);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    padding: 2rem; /* Adjust padding as needed */
+  }
+
+  .footer-text {
+    text-align: center; /* Center text */
+    padding-top: 2rem;
+    padding-left: 0; /* Remove left padding */
+    font-size: 2rem; /* Adjust font size */
+    line-height: 2rem;
+  }
+
+  .email-text {
+    padding-top: 4rem;
+    text-decoration: underline;
+  }
+
+  .footer-columns {
+    flex-direction: column; /* Stack columns vertically */
+    padding-top: 5rem;
+    padding-left: 0; /* Remove left padding */
+    align-items: center; /* Center columns horizontally */
+  }
+
+  .footer-column {
+    text-align: center; /* Center text in columns */
+  }
+
+  .back-to-top-button {
+    bottom: 4rem; /* Adjust position if needed */
+  }
+}

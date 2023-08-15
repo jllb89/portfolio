@@ -1,0 +1,45 @@
+.skills-section {
+  background-color: rgb(0, 0, 0);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 2;
+  padding-top: 3rem;
+}
+
+.skills-text {
+  font-family: 'regular-mori';
+  font-size: 3.5rem;
+  padding-top: .5rem;
+  padding-left: 4rem;
+  color: white;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+
+.skills-title {
+  color: white;
+  padding-left: 4rem;
+  font-family: 'regular';
+  font-size: .9rem;
+}
+
+.skills-subtitle {
+  color: white;
+  padding-left: 4rem;
+  font-family: 'regular';
+  font-size: .9rem;
+  padding-bottom: 3rem;
+  opacity: .3;
+}
+
+@media screen and (max-width: 768px) {
+
+  .skills-text {
+    font-size: 2rem;
+  }
+
+}

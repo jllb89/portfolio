@@ -1,0 +1,173 @@
+.works {
+  position: relative; /* To ensure z-index applies */
+  z-index: 1; /* This will ensure that the works section is above the background-image */
+}
+
+/* Additional adjustments for the works section */
+.works .projects-container .background-image {
+  z-index: 0; /* You can reset the z-index to 0 if required */
+}
+.works-div {
+    cursor: none;
+  }
+  
+  .projects-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align vertically to the bottom */
+    align-items: flex-start; /* Align horizontally to the start (left) */
+    height: 100vh;
+    color: white;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: background-image 2s ease-in-out;
+  }
+  
+  .project-titles {
+    padding-bottom: 20rem;
+    z-index: 2;
+
+  }
+  
+  .project {
+    padding-left: 4rem;
+    font-size: 0.8rem;
+    color: white;
+    font-family: 'regular-mori';
+    margin-bottom: 0.8rem;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    text-decoration: none !important;
+  }
+  
+  .project.active {
+    opacity: 1;
+    text-decoration: none !important;
+  }
+
+  .project a {
+    font-size: 0.8rem;
+    color: white; /* Sets the text color */
+    font-family: 'regular-mori';
+    margin-bottom: 0.8rem;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    text-decoration: none; /* Removes underline */
+  }
+  
+  .project.active a {
+    opacity: 1;
+    text-decoration: none; /* Removes underline from active class */
+  }
+  
+  
+  /* Custom Cursor Styles */
+  .custom-cursor {
+    position: absolute;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: .7rem;
+    font-family: 'regular';
+    pointer-events: none;
+    z-index: 9999;
+    cursor: none;
+  }
+  
+  .project-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .overlay-images img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .overlay-texts {
+font-size: 1rem;
+font-family: 'regular';  }
+  
+
+@media screen and (max-width: 768px) {
+  .works {
+    position: relative; /* To ensure z-index applies */
+    z-index: 1; /* This will ensure that the works section is above the background-image */
+  }
+
+  /* Additional adjustments for the works section */
+  .works .projects-container .background-image {
+    z-index: 0; /* You can reset the z-index to 0 if required */
+  }
+
+  .projects-container{
+    padding-left: 0;
+  }
+  
+  .project-titles {
+    z-index: 2;
+    padding-bottom: 18rem;
+    padding-left: 0;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
+  
+  .open-mobile {
+    z-index: 3;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-family: 'regular';
+    font-size: .8rem;
+    bottom: 5rem;
+    width: 100%; /* This will make it span the full width */
+    animation: flashing 3s linear infinite;
+  }
+  
+ 
+  @keyframes flashing {
+
+    0%,
+    100% {
+      opacity: 0.1;
+    }
+  
+    50% {
+      opacity: .8;
+    }}
+
+}

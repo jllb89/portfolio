@@ -1,0 +1,225 @@
+@import 'navbar.css';
+@import 'about.css';
+
+@font-face {
+  font-family: medium;
+  src: url('./PPNeueMontreal-Medium.ttf');
+
+}
+
+@font-face {
+  font-family: regular;
+  src: url('./PPNeueMontreal-Regular.ttf');
+}
+
+@font-face {
+  font-family: light;
+  src: url('./PPNeueMontreal-Light.ttf');
+}
+
+@font-face {
+  font-family: medium-mori;
+  src: url('./PPMori-SemiBold.ttf');
+
+}
+
+@font-face {
+  font-family: regular-mori;
+  src: url('./PPMori-Regular.ttf');
+}
+
+@font-face {
+  font-family: light-mori;
+  src: url('./PPMori-Extralight.ttf');
+}
+
+
+.CenterContainer,
+.About {
+  scroll-snap-align: start;
+}
+
+.App {
+  scroll-behavior: smooth;
+  background-color: black;
+  position: relative;
+}
+
+
+.CenterContainer,
+.About {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.Skills {
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.works {
+  position: relative;
+  cursor: none;
+  height: 100vh;
+}
+
+.Footer {
+  height: 80vh;
+}
+
+.animated-background {
+  background: linear-gradient(to right, rgb(35, 30, 40), #21232c, #3a2f2f);
+  background-size: 200% 200%;
+  animation: animate-background 8s infinite ease-in-out;
+}
+
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+
+/* TEXT CONTAINER
+ */
+.textContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  animation: fadeIn .5s 2s forwards;
+}
+
+.textContainer.fade-in {
+  opacity: 1;
+}
+
+.textContainer.fade-out {
+  opacity: 0;
+}
+
+.lens {
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.presentation-text {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  cursor: none;
+  font-family: "regular-mori";
+  font-size: 3rem;
+  line-height: 1.2;
+  z-index: 9998;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.translated {
+  clip-path: circle(100px at 50% 50%);
+  /* Update the radius to match the lens size */
+  position: absolute;
+  pointer-events: none;
+  z-index: 10000;
+  /* Make sure the translated text is above the lens */
+}
+
+.CenterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.menu-container {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in 1s forwards;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flashing {
+
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: .8;
+  }
+}
+
+
+.scroll-prompt {
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flashing 3s linear infinite;
+  z-index: 10001;
+  font-family: 'regular';
+  font-size: .8rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  .presentation-text {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    cursor: none;
+    font-family: "regular";
+    font-size: 2rem;
+    line-height: 1.3;
+    z-index: 9998;
+    position: relative;
+    box-sizing: border-box;
+  }
+}

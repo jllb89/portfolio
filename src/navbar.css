@@ -1,0 +1,211 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 4rem);
+    padding: 2rem;
+    align-items: center;
+    z-index: 9999;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 100003;
+}
+
+.columns {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.column {
+    display: flex;
+}
+
+.column.logo {
+    flex: 0 0 auto;
+    margin-right: 2rem;
+    flex-direction: column;
+    color: white;
+    font-family: 'regular';
+    font-size: .8rem;
+    letter-spacing: 0.5px;
+    line-height: 150%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.column.logo.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.center-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out;
+    pointer-events: none;
+}
+
+.center-columns:not(.hidden) {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.column.logo,
+.column.menu {
+    flex: 0 0 auto;
+}
+
+.links {
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.column.links a {
+    font-family: 'medium';
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: white;
+    opacity: 0.4;
+    transition: opacity 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.column.links a:hover {
+    opacity: 0.9;
+}
+
+.column.links a:active {
+    opacity: 1;
+}
+
+.column.text {
+    font-family: 'medium';
+    font-size: 0.8rem;
+    color: white;
+}
+
+.job-title {
+    opacity: 0.2;
+}
+
+.menu-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'medium';
+    font-size: 0.8rem;
+    color: #000;
+    background-color: #fff;
+    transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+.menu-button:hover,
+.menu-button.open {
+  color: #fff;
+  background-color: #202020;
+}
+
+.menu-button:active,
+.menu-button:focus {
+    outline: none;
+}
+
+.hide-text {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    position: absolute;
+}
+
+.show-text {
+    opacity: 1;
+    transition: opacity 1.5s ease;
+    position: absolute;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100001;
+}
+
+.overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.plus-text {
+  transition-delay: 0.3s; /* Add a slight delay */
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .navbar-content {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar .column.logo {
+      align-self: flex-start; /* Align the logo to the start */
+      order: 0; /* Ensuring the logo stays in the first position */
+      margin-top: 2.3rem; /* Adjust this value to align the logo with the button */
+    }
+  
+    .navbar .columns {
+      flex-direction: column;
+      align-items: flex-start;
+      order: 1; /* Setting the order after the logo */
+    }
+  
+    .navbar .column {
+      margin-top: 20px;
+    }
+  
+    .navbar .center-columns {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 4rem;
+    }
+  
+    .navbar .column.menu {
+      top: 0;
+      right: 0;
+      position: absolute;
+      
+      order: 0; /* Ensuring the menu button stays in the same position as the logo */
+    }
+  
+    .overlay {
+      display: block;
+      background: rgba(0, 0, 0);
+    }
+  
+    .column.links a {
+      font-family: 'regular';
+      font-size: 2rem;
+      color: white;
+      opacity: 1;
+    }
+  }
+  
+  

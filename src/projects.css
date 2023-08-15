@@ -1,0 +1,163 @@
+.projects {
+  height: auto; /* Example: making it the full viewport height */
+  overflow: hidden; /* If you want to hide overflow */
+}
+
+.project-details {
+    height: auto;
+    color: white;
+    background-color: black;
+    font-family: 'regular';
+    overflow: visible;
+  }
+
+  .images {
+    padding-bottom: 7rem;
+  }
+  
+  .project-details .header {
+    position: relative; /* Add this line */
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+  }
+ 
+  .project-details .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 20% opacity black overlay */
+    z-index: 1; /* Make sure the overlay is above the background image */
+  }
+ 
+  .project-details h1 {
+    position: absolute; /* Absolute position to center in the header */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Shift back by half of its own width and height to center */
+    z-index: 2; /* Make sure the title is above the overlay */
+    font-family: 'regular-mori';
+    font-size: .7rem;
+  }
+ 
+  
+  .project-details .images {
+    
+    padding-top: 12rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+  
+  .project-details .image-container {
+    display: flex;
+    align-items: flex-start; /* Aligning elements to the top */
+    width: 100%;
+    margin-bottom: 16rem;
+    position: relative;
+  }
+  
+  .project-details .image-container img {
+    width: 60%;
+    height: auto;
+    display: block;
+  }
+  
+  .project-details .image-container p {
+    width: 40%; /* Taking half the width of the container */
+    padding-left: 3rem; 
+    font-family: 'regular';
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .back-button {
+    position: sticky;
+    top: 2rem;
+    left: 20px;
+    width: 7rem;
+    height: 7rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 1s, color 1s;
+    color: black;
+    font-size: .8rem;
+    align-self: start;
+    z-Index: 1000;
+
+  }
+  
+  .back-button:hover {
+    background: black;
+    color: white;
+    z-Index: 1000;
+
+  }  
+
+  .project-navigation {
+    position: fixed;
+    bottom: 4rem;
+    left: 2rem;
+    right: 2rem; /* Added to allow justification */
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent; /* Removing the background color */
+    z-index: 1000; /* To make sure it's above other elements */
+  }
+  
+  .project-navigation .prev-button,
+  .project-navigation .next-button {
+    background-color: transparent; /* Removing background color from buttons */
+    border: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    transition: transform 1s; /* Added for the transition of moving to the right */
+    color: white; /* Change color to black */
+  }
+  
+  .project-navigation .prev-button:hover,
+  .project-navigation .next-button:hover {
+    transform: translateX(0.5rem); /* Moving the button to the right on hover */
+  }
+  
+  .project-navigation .next-button {
+    margin-left: auto; /* Justify to the right */
+  }
+  
+  
+.preview-snippet {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  display: none; /* Hide by default */
+  border: 1px solid black;
+  transition: top 0.1s, left 0.1s; /* Smooth movement */
+}
+  
+  
+  @media screen and (max-width: 768px) {
+    .project-details .images {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .project-details .image-container {
+      flex-direction: column; /* Stack image and description vertically on small screens */
+    }
+    .project-details .image-container img,
+    .project-details .image-container p {
+      width: 100%;
+    }
+    .project-details .image-container p {
+      padding-left: 0;
+    }
+  }
+  
