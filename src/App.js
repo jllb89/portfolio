@@ -154,9 +154,6 @@ function RouterContent() {
 
   return (
     <ScrollContext.Provider value={{ skillsRefArray, scrollRef }}>
-      {fading && (
-        <div className={`fade-transition ${fadeIn ? "fade-in" : "fade-out"}`} />
-      )}
       {showNavbar && (
         <Navbar
           homeRef={homeRef}

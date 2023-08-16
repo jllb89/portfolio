@@ -1,36 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import { projects } from './projectsData'; 
 import './works.css';
 
-function BackgroundImage({ src, alt, ...props }) {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {
-      setLoaded(true);
-    };
-  }, [src]);
-
-  return (
-    <>
-      <img src={src} alt={alt} style={{ display: 'none' }} />
-      {loaded && (
-        <div
-          {...props}
-          style={{ ...props.style, backgroundImage: `url(${src})` }}
-        />
-      )}
-    </>
-  );
-}
-
 function Works() {
+  const navigate = useNavigate();
   const [activeProject, setActiveProject] = useState(0);
   const intervalId = useRef(null);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [tapDisabled, setTapDisabled] = useState(false);
 
   const handleProjectLeave = () => {
     clearInterval(intervalId.current);
@@ -86,16 +64,39 @@ function Works() {
     </div>
   );
 
+  const handleDivClick = (e) => {
+    if (tapDisabled) return;
+
+    setTapDisabled(true);
+    setTimeout(() => setTapDisabled(false), 500);  // 500ms delay to re-enable taps
+
+    // Prevent default touch behavior
+    if (e.type === "touchend") e.preventDefault();
+
+    e.stopPropagation(); // Prevent the event from propagating up to parent elements
+
+    const activeProj = projects[activeProject];
+    if (activeProj) {
+      navigate(`/project/${activeProj.id}`);
+    }
+  };
+
   return (
-    <div className="works-div" data-scroll data-scroll-speed="1">
+    <div 
+      className="works-div" 
+      data-scroll 
+      data-scroll-speed="1"
+    >
       <div className="projects-container">
-        <Link to={`/project/${projects[activeProject].id}`}>
-          <BackgroundImage
-            className="background-image"
-            src={projects[activeProject].projectImage}
-            alt={projects[activeProject].title}
+        {projects.map((project, index) => (
+          <div 
+            key={index}
+            className={`background-image ${activeProject === index ? 'active' : ''}`}
+            style={{ backgroundImage: `url(${project.projectImage})` }}
+            alt={project.title}
           />
-        </Link>
+        ))}
+        
         <div className="project-titles" data-scroll data-scroll-speed="3">
           <div className="skills-title">case<br /></div>
           <div className='skills-subtitle'>studies</div>
@@ -113,6 +114,7 @@ function Works() {
           tap on image to open project ⟶
         </div>
       </div>
+      <div className="interceptor" onClick={handleDivClick} onTouchEnd={handleDivClick}></div>
       <CustomCursor />
     </div>
   );

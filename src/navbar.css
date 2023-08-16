@@ -1,5 +1,4 @@
 .navbar {
-    display: flex;
     justify-content: space-between;
     position: fixed;
     top: 0;
@@ -15,7 +14,7 @@
     align-items: center;
     width: 100%;
     position: relative;
-    z-index: 100003;
+    z-index: 10003;
 }
 
 .columns {
@@ -147,7 +146,7 @@
     transition: opacity 1.5s ease-in-out;
     opacity: 0;
     pointer-events: none;
-    z-index: 100001;
+    z-index: 10001;
 }
 
 .overlay.visible {
@@ -160,6 +159,15 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .navbar {
+        z-index: 10; /* Default value when menu is closed */
+      }
+
+      .navbar-content {
+        z-index: 11; /* Default value when menu is closed */
+      }
+
     .navbar .navbar-content {
       flex-direction: column;
       align-items: flex-start;
@@ -186,6 +194,11 @@
       flex-direction: column;
       align-items: flex-start;
       padding-top: 4rem;
+      display: none;
+    }
+
+    .navbar .center-columns:not(.hidden) {
+        display: flex; /* Show when not hidden */
     }
   
     .navbar .column.menu {
@@ -199,6 +212,7 @@
     .overlay {
       display: block;
       background: rgba(0, 0, 0);
+      z-index: 9;
     }
   
     .column.links a {
