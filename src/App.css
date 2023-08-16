@@ -79,6 +79,7 @@
   height: 100%;
   z-index: -1; /* Keep the video in the background */
   object-fit: cover;
+  opacity: .9;
 }
 
 
