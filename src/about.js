@@ -31,7 +31,7 @@ function About() {
   return (
     <div className="about-section" data-scroll data-scroll-speed="1">
       <div className="about-video">
-        <video ref={videoRef} src="/your-video.mp4" muted loop playsInline autoPlay />
+        <video ref={videoRef} src="/port2.mp4" muted loop playsInline autoPlay />
       </div>
       <div className={`about-content ${showText ? 'visible' : ''}`} data-scroll data-scroll-speed="1.5">
 

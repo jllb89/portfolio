@@ -6,7 +6,7 @@ import About from './about';
 import Skills from './skills';
 import Works from './works';
 import Footer from './footer';
-import ProjectDetails from './ProjectDetails'; // Import your new component
+import ProjectDetails from './ProjectDetails';
 import LocomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import './App.css';

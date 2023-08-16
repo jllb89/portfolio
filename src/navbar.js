@@ -30,8 +30,8 @@ function Navbar({ homeRef, aboutRef, worksRef, contactRef }) {
           </div>
           <div className="column links external-links">
             <a href={`${process.env.PUBLIC_URL}/jllb2023.pdf`} download>cv</a>
-            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">github</a>
-            <a href="https://medium.com/@your-medium-username" target="_blank" rel="noopener noreferrer">medium</a>
+            <a href="https://github.com/jllb89" target="_blank" rel="noopener noreferrer">github</a>
+            <a href="https://medium.com/@lopezb.jl/embracing-ai-through-chat-gpt-to-expand-my-capabilities-as-a-product-designer-bcde0f69c352" target="_blank" rel="noopener noreferrer">medium</a>
           </div>
           <div className="column text">
             *open to work

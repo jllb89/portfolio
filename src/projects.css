@@ -34,20 +34,21 @@
     z-index: 1; /* Make sure the overlay is above the background image */
   }
  
-  .project-details h1 {
+  .project-details .project-title {
     position: absolute; /* Absolute position to center in the header */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Shift back by half of its own width and height to center */
     z-index: 2; /* Make sure the title is above the overlay */
     font-family: 'regular';
+    text-decoration: none;
     font-size: .7rem;
   }
  
   
   .project-details .images {
     
-    padding-top: 12rem;
+    padding-top: 5rem;
     padding-left: 8rem;
     padding-right: 8rem;
   }
@@ -155,6 +156,7 @@
     .project-details .image-container img,
     .project-details .image-container p {
       width: 100%;
+      font-size: .9rem;
     }
     .project-details .image-container p {
       padding-left: 0;

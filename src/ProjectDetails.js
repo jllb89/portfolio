@@ -151,7 +151,7 @@ const ProjectDetails = () => {
       </button>
       <div ref={scrollRef} className="project-details" data-scroll-container data-scroll data-scroll-speed="1">
         <div className="header" style={{ backgroundImage: `url(${project.header})` }}>
-          <h1 ref={titleRef}>{project.title}</h1>
+          <p className="project-title" ref={titleRef}>{project.title}</p>
         </div>
         <div className="images">
           {project.images.map((image, index) => (
@@ -174,6 +174,7 @@ const ProjectDetails = () => {
           </button>
         )}
       </div>
+
 
     </>
   );
