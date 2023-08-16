@@ -85,18 +85,27 @@ function Home({ scrollRef, homeRef, aboutRef, worksRef, contactRef }) {
 
   return (
     <div className="App scroll-container" data-scroll-container>
-      <div ref={homeRef} className="CenterContainer animated-background">
+      
+      <div ref={homeRef} className="CenterContainer">
+        <video className="video-background" autoPlay muted loop>
+          <source src="/background-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <TextContainer />
       </div>
+      
       <div ref={aboutRef} className="About">
         <About />
       </div>
+      
       <div className="Skills">
         <Skills />
       </div>
+      
       <div ref={worksRef} className="works">
         <Works />
       </div>
+      
       <div ref={contactRef} className="Footer">
         <Footer
           homeRef={homeRef}
@@ -107,6 +116,7 @@ function Home({ scrollRef, homeRef, aboutRef, worksRef, contactRef }) {
       </div>
     </div>
   );
+  
 }
 
 
