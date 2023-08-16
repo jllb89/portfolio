@@ -72,11 +72,20 @@ export const projects = [
       id: '4',
       title: 'portfolio - react',
       category: 'Category 1',
-      header: '/portfolio.webp', // or video path
-      projectImage: '/portfolio.webp', // Add the corresponding background image
+      header: '/portfolio.webp',
+      projectImage: '/portfolio.webp',
       images: [
-        { src: '/dddd.webp', description: <>Read my article in medium about how I'm embracing AI through Chat-GPT to expand my capabilities as Product Manager & Designer:<br /><br /> Read here.</> },
-            ],
-    },
+        { 
+          src: '/dddd.webp', 
+          description: (
+            <>
+              Read my article in medium about how I'm embracing AI through Chat-GPT to expand my capabilities as Product Manager & Designer:<br /><br /> 
+              <a class="medium" href="https://medium.com/@lopezb.jl/embracing-ai-through-chat-gpt-to-expand-my-capabilities-as-a-product-designer-bcde0f69c352" target="_blank" rel="noopener noreferrer">Read here.</a>
+            </>
+          ) 
+        },
+      ],
+    }
+    
   ];
   

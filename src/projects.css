@@ -144,6 +144,10 @@
   transition: top 0.1s, left 0.1s; /* Smooth movement */
 }
   
+.medium {
+  text-decoration: underline;
+  color: white;
+}
   
   @media screen and (max-width: 768px) {
     .project-details .images {
